@@ -1,0 +1,13 @@
+import prisma from '../prisma/client.js'
+
+const testConnection = async () => {
+  try {
+    await prisma.$connect()
+    console.log('PostgreSQL connected successfully')
+  } catch (error) {
+    console.error('PostgreSQL connection error:', error.message)
+    process.exit(1)
+  }
+}
+
+export default testConnection
